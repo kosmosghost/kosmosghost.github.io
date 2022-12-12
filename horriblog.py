@@ -31,7 +31,7 @@ def blog_md_to_html(filename):
     subprocess.Popen(pandoc, shell=True)
 
 def md_index_to_html():
-    pandoc = "pandoc -s --template _template/dark-template.html -o index.html index.md"
+    pandoc = "pandoc -s --template _template/dark-template.html -o index.html md_index.md"
     subprocess.Popen(pandoc, shell=True)
 
 def create_homepage():
@@ -68,7 +68,7 @@ def create_html_link(filename, blog_title):
     return md_link
 
 def write_to_index_md(md_list):
-    file = open("index.md", "w")
+    file = open("md_index.md", "w")
     file.write(md_list)
 
 def sort_blogs_by_date(filelist):
