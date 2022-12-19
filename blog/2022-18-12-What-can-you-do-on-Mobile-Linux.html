@@ -39,44 +39,79 @@
       margin: 0;
       white-space: pre-wrap;
     }
+
     h1 {
       text-align: center;
     }
-    h1, h2, h3, h4, h5, h6 {
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
       margin-top: 1.4em;
     }
-    h5, h6 {
+
+    h5,
+    h6 {
       font-size: 1em;
       font-style: italic;
     }
+
     h6 {
       font-weight: normal;
     }
+
+    img {
+      max-width: 25%;
+      max-height: 25%;
+      height: auto;
+      padding: 3%;
+    }
+
+    .center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      display: flex;
+      justify-content: center;
+        }
+
     @media (max-width: 600px) {
       html {
         margin-left: 0%;
         margin-right: 0%;
       }
+
       body {
         font-size: 0.9em;
       }
     }
+
     @media print {
       body {
         background-color: rgb(24, 26, 28);
         color: rgb(194, 196, 198);
         font-size: 12pt;
       }
-      p, h2, h3 {
+
+      p,
+      h2,
+      h3 {
         orphans: 3;
         widows: 3;
       }
-      h2, h3, h4 {
+
+      h2,
+      h3,
+      h4 {
         page-break-after: avoid;
       }
+
       ul li {
-       padding: 0;
-      } 
+        padding: 0;
+      }
     }
   </style>
       <!--[if lt IE 9]>
@@ -91,12 +126,18 @@
       <p>Over the last few years, running Linux on mobile devices has only gotten better. About a month ago, I decided to try to challenge myself to daily drive the pinephone for seven days. The experience was painful. The pinephone hardware was just too slow. Since then, I have switched to the oneplus6t, running postmarketOS with Plasma Mobile. It has become my primary device.</p>
       <h2 id="weather">Weather:</h2>
       <p>The weather app looks like a professional mobile app and compares well with the weather app on IOS.</p>
+      <div class="center">
+      <img src="../Pictures/weather.png" title="Weather App" alt="weather" /> <img src="../Pictures/weather.png" title="Weather App" alt="weather" />
+      </div>
       <h2 id="web-browsing">Web Browsing:</h2>
       <p>I mostly use the web browser Angelfish, which comes included with Plasma Mobile. Angelfish plays Youtube videos at 720p without any issues. Audio does also work.</p>
       <h2 id="youtube">Youtube:</h2>
       <p>In addition to using the web browser, I am also using Freetube to view youtube videos. With it, I can subscribe without having to log in to a youtube account. It uses electron as the backend.</p>
       <h2 id="audiobooks-and-podcasts">Audiobooks and Podcasts:</h2>
       <p>For audiobooks, I am using the app ‘Cozy.’ It works well enough, and I have zero issues. Plasma Mobile comes with an app called ‘Kasts.’ My only issue is that while I can download and listen to podcasts from the app, I cannot stream them. I understand this issue has been resolved in the next release.</p>
+      <div class="center">
+      <img src="../Pictures/cozy.png" title="Cozy" alt="Kasts" /> <img src="../Pictures/cozy-2.png" alt="Cozy" /> <img src="../Pictures/kasts.png" />
+      </div>
       <h2 id="replacing-apple-news-with-rss-feeds">Replacing Apple News with RSS Feeds:</h2>
       <p>In the past, I have had an issue with Apple News. I am now using the app ‘Newsflash.’ Newsflash has all the features I have ever wanted in an RSS app.</p>
       <h2 id="games">Games:</h2>
