@@ -43,7 +43,7 @@ def create_homepage():
 
 
 def create_md_index(sorted_list):
-    blogs_md_list = ""
+    blogs_md_list = "---\ntitle: kosmosghost blog\n---\n  \n"
     for i in range(len(sorted_list)):
         filename = parse_blog_filename_string(sorted_list[i])
         blogs_md_list += create_html_link(sorted_list[i], filename[3])
