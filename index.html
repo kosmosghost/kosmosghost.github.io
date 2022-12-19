@@ -39,44 +39,79 @@
       margin: 0;
       white-space: pre-wrap;
     }
+
     h1 {
       text-align: center;
     }
-    h1, h2, h3, h4, h5, h6 {
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
       margin-top: 1.4em;
     }
-    h5, h6 {
+
+    h5,
+    h6 {
       font-size: 1em;
       font-style: italic;
     }
+
     h6 {
       font-weight: normal;
     }
+
+    img {
+      max-width: 25%;
+      max-height: 25%;
+      height: auto;
+      padding: 3%;
+    }
+
+    .center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      display: flex;
+      justify-content: center;
+        }
+
     @media (max-width: 600px) {
       html {
         margin-left: 0%;
         margin-right: 0%;
       }
+
       body {
         font-size: 0.9em;
       }
     }
+
     @media print {
       body {
         background-color: rgb(24, 26, 28);
         color: rgb(194, 196, 198);
         font-size: 12pt;
       }
-      p, h2, h3 {
+
+      p,
+      h2,
+      h3 {
         orphans: 3;
         widows: 3;
       }
-      h2, h3, h4 {
+
+      h2,
+      h3,
+      h4 {
         page-break-after: avoid;
       }
+
       ul li {
-       padding: 0;
-      } 
+        padding: 0;
+      }
     }
   </style>
       <!--[if lt IE 9]>
