@@ -1,5 +1,7 @@
 You are going to need a few tools before you can install postmarketOS with full disk encryption on the oneplus6/t device:
+
 1) Android tools for fastboot.
+
 2) pmbootstrap - pip install pmbootstrap
 
 Warning: I have not tried this with dual booting android.
@@ -19,13 +21,14 @@ pmbootstrap init
 
 Simply follow the prompts and select oneplus as the vendor, and enchilada if using the oneplus6 or fajita if using oneplus6t.
 
+Next build the system:
 
 ```
 pmbootstrap install --fde --split --filesystem btrfs
 
 ```
 
-I chose `--filesystem btrfs` for this because I like btrfs, and it's easier to install on the oneplus6/t devices with btrfs. You can ignore this if you chose the defaults, which is ext4. I will have instructions for btrfs and regular ext4 at the end of this tutorial.
+I chose `--filesystem btrfs` for this because I like btrfs, and it's easier to install on the oneplus6/t devices with btrfs. You can ignore this if you want chose the default, which is ext4. I will have instructions for btrfs and regular ext4 at the end of this tutorial.
 
 ```
 pmbootstrap export
@@ -39,9 +42,10 @@ fastboot erase vendor
 fastboot erase userdata
 ```
 
-This is going to erase the bootloader on the boot slot. Erasing userdata will probably delete the data on your Android partition. This method only works when not dual booting.
+This is going to erase the bootloader on the boot slot. The next commands will install a new bootloader thst will boot PostmarketOS. Erasing userdata will probably delete the data on your Android partition. This method only works when not dual booting.
 
 When inside the postmarketOS-export directory run:
+
 ```
 fastboot flash boot boot.img
 fastboot flash vendor oneplus-fajita-boot.img
@@ -56,7 +60,7 @@ Next download the jumpdrive enchilada/fajita boot imgage from [github](https://g
 fastboot boot jumpdrive.img
 ```
 
-The phone will boot into the jumpdrive os and show as a block device. In my case it was sda.
+The phone will boot into the jumpdrive os and show as a block device when connected to your computer using a usb cable. In my case it was sda.
 
 Run `cryptsetup open /dev/sdx fajita` and enter your password for unlocking the device.
 
@@ -68,6 +72,7 @@ btrfs resize max /dev/mapper/fajita
 ```
 
 Or for ext4:
+
 ```
 cryptsetup resize fajita
 
@@ -76,4 +81,4 @@ e2fsck -f /dev/mapper/fajita
 resize2fs /dev/mapper/fajita
 ```
 
-And now everything should be working!
+And now when you reboot everything should be working!

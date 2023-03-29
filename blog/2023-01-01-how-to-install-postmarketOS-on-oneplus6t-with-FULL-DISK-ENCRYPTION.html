@@ -120,22 +120,27 @@
   </head>
 
 <body>
-        <p>You are going to need a few tools before you can install postmarketOS with full disk encryption on the oneplus6/t device: 1) Android tools for fastboot. 2) pmbootstrap - pip install pmbootstrap</p>
+        <p>You are going to need a few tools before you can install postmarketOS with full disk encryption on the oneplus6/t device:</p>
+        <ol type="1">
+        <li><p>Android tools for fastboot.</p></li>
+        <li><p>pmbootstrap - pip install pmbootstrap</p></li>
+        </ol>
         <p>Warning: I have not tried this with dual booting android.</p>
         <p>Here is how I installed postmarketOS on my oneplus6t with FULL DISK ENCRYPTION:</p>
         <pre><code>fastboot erase dtbo</code></pre>
         <p>Warning: This will mess up android if you want to dual boot.</p>
         <pre><code>pmbootstrap init</code></pre>
         <p>Simply follow the prompts and select oneplus as the vendor, and enchilada if using the oneplus6 or fajita if using oneplus6t.</p>
+        <p>Next build the system:</p>
         <pre><code>pmbootstrap install --fde --split --filesystem btrfs
         </code></pre>
-        <p>I chose <code>--filesystem btrfs</code> for this because I like btrfs, and it’s easier to install on the oneplus6/t devices with btrfs. You can ignore this if you chose the defaults, which is ext4. I will have instructions for btrfs and regular ext4 at the end of this tutorial.</p>
+        <p>I chose <code>--filesystem btrfs</code> for this because I like btrfs, and it’s easier to install on the oneplus6/t devices with btrfs. You can ignore this if you want chose the default, which is ext4. I will have instructions for btrfs and regular ext4 at the end of this tutorial.</p>
         <pre><code>pmbootstrap export</code></pre>
         <p>Again, just follow the prompts. pmbootstrap will create a link into /tmp/postmarketOS-export/.</p>
         <pre><code>fastboot erase boot
         fastboot erase vendor
         fastboot erase userdata</code></pre>
-        <p>This is going to erase the bootloader on the boot slot. Erasing userdata will probably delete the data on your Android partition. This method only works when not dual booting.</p>
+        <p>This is going to erase the bootloader on the boot slot. The next commands will install a new bootloader thst will boot PostmarketOS. Erasing userdata will probably delete the data on your Android partition. This method only works when not dual booting.</p>
         <p>When inside the postmarketOS-export directory run:</p>
         <pre><code>fastboot flash boot boot.img
         fastboot flash vendor oneplus-fajita-boot.img
@@ -143,7 +148,7 @@
         <p>Once everything is flashed turn off the device. Reboot, and make sure that everything is working as it should. As of this writing postmarketOS does not correctly size the storage on your device. It is very important to boot the device, and then restart, before you resize the storage.</p>
         <p>Next download the jumpdrive enchilada/fajita boot imgage from <a href="https://github.com/dreemurrs-embedded/Jumpdrive/releases">github</a> and run:</p>
         <pre><code>fastboot boot jumpdrive.img</code></pre>
-        <p>The phone will boot into the jumpdrive os and show as a block device. In my case it was sda.</p>
+        <p>The phone will boot into the jumpdrive os and show as a block device when connected to your computer using a usb cable. In my case it was sda.</p>
         <p>Run <code>cryptsetup open /dev/sdx fajita</code> and enter your password for unlocking the device.</p>
         <p>In this very order run if you used btrfs for the filesystem:</p>
         <pre><code>cryptsetup resize fajita
@@ -154,7 +159,7 @@
         e2fsck -f /dev/mapper/fajita
 
         resize2fs /dev/mapper/fajita</code></pre>
-        <p>And now everything should be working!</p>
+        <p>And now when you reboot everything should be working!</p>
   </body>
 
 </html>
