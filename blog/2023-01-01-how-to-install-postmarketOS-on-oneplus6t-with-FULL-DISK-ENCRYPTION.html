@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="" >
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+          <title>2023-01-01-how-to-install-postmarketOS-on-oneplus6t-with-FULL-DISK-ENCRYPTION</title>
+  <style type="text/css">
+    html {
+      background-color: rgb(24, 26, 28);
+      color: rgb(194, 196, 198);
+      margin-left: 15%;
+      margin-right: 15%;
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+    }
+
+    a {
+      color: rgb(194, 196, 198);
+    }
+
+    a:visited {
+      color: rgb(194, 196, 198);
+    }
+
+    li {
+      list-style: none;
+    }
+
+    a:not(:hover) {
+      text-decoration: none;
+    }
+
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+      white-space: pre-wrap;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      margin-top: 1.4em;
+    }
+
+    h5,
+    h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+
+    h6 {
+      font-weight: normal;
+    }
+
+    img {
+      max-width: 25%;
+      max-height: 25%;
+      height: auto;
+      padding: 3%;
+    }
+
+    .center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      display: flex;
+      justify-content: center;
+        }
+
+    @media (max-width: 600px) {
+      html {
+        margin-left: 0%;
+        margin-right: 0%;
+      }
+
+      body {
+        font-size: 0.9em;
+      }
+    }
+
+    @media print {
+      body {
+        background-color: rgb(24, 26, 28);
+        color: rgb(194, 196, 198);
+        font-size: 12pt;
+      }
+
+      p,
+      h2,
+      h3 {
+        orphans: 3;
+        widows: 3;
+      }
+
+      h2,
+      h3,
+      h4 {
+        page-break-after: avoid;
+      }
+
+      ul li {
+        padding: 0;
+      }
+    }
+  </style>
+      <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+  </head>
+
+<body>
+        <p>You are going to need a few tools before you can install postmarketOS with full disk encryption on the oneplus6/t device: 1) Android tools for fastboot. 2) pmbootstrap - pip install pmbootstrap</p>
+        <p>Warning: I have not tried this with dual booting android.</p>
+        <p>Here is how I installed postmarketOS on my oneplus6t with FULL DISK ENCRYPTION:</p>
+        <pre><code>fastboot erase dtbo</code></pre>
+        <p>Warning: This will mess up android if you want to dual boot.</p>
+        <pre><code>pmbootstrap init</code></pre>
+        <p>Simply follow the prompts and select oneplus as the vendor, and enchilada if using the oneplus6 or fajita if using oneplus6t.</p>
+        <pre><code>pmbootstrap install --fde --split --filesystem btrfs
+        </code></pre>
+        <p>I chose <code>--filesystem btrfs</code> for this because I like btrfs, and it’s easier to install on the oneplus6/t devices with btrfs. You can ignore this if you chose the defaults, which is ext4. I will have instructions for btrfs and regular ext4 at the end of this tutorial.</p>
+        <pre><code>pmbootstrap export</code></pre>
+        <p>Again, just follow the prompts. pmbootstrap will create a link into /tmp/postmarketOS-export/.</p>
+        <pre><code>fastboot erase boot
+        fastboot erase vendor
+        fastboot erase userdata</code></pre>
+        <p>This is going to erase the bootloader on the boot slot. Erasing userdata will probably delete the data on your Android partition. This method only works when not dual booting.</p>
+        <p>When inside the postmarketOS-export directory run:</p>
+        <pre><code>fastboot flash boot boot.img
+        fastboot flash vendor oneplus-fajita-boot.img
+        fastboot flash userdata oneplus-fajita-root.img</code></pre>
+        <p>Once everything is flashed turn off the device. Reboot, and make sure that everything is working as it should. As of this writing postmarketOS does not correctly size the storage on your device. It is very important to boot the device, and then restart, before you resize the storage.</p>
+        <p>Next download the jumpdrive enchilada/fajita boot imgage from <a href="https://github.com/dreemurrs-embedded/Jumpdrive/releases">github</a> and run:</p>
+        <pre><code>fastboot boot jumpdrive.img</code></pre>
+        <p>The phone will boot into the jumpdrive os and show as a block device. In my case it was sda.</p>
+        <p>Run <code>cryptsetup open /dev/sdx fajita</code> and enter your password for unlocking the device.</p>
+        <p>In this very order run if you used btrfs for the filesystem:</p>
+        <pre><code>cryptsetup resize fajita
+        btrfs resize max /dev/mapper/fajita</code></pre>
+        <p>Or for ext4:</p>
+        <pre><code>cryptsetup resize fajita
+
+        e2fsck -f /dev/mapper/fajita
+
+        resize2fs /dev/mapper/fajita</code></pre>
+        <p>And now everything should be working!</p>
+  </body>
+
+</html>
