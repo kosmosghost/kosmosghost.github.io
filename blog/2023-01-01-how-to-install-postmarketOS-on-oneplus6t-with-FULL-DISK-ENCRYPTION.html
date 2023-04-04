@@ -125,8 +125,9 @@
         <li><p>Android tools for fastboot.</p></li>
         <li><p>pmbootstrap - pip install pmbootstrap</p></li>
         </ol>
+        <p>Note: This tutorial assumes you have your oneplus6/t device unlocked. I will add future instructions here on how to do that.</p>
         <p>Warning: I have not tried this with dual booting android.</p>
-        <p>Here is how I installed postmarketOS on my oneplus6t with FULL DISK ENCRYPTION:</p>
+        <p>Here is how I installed postmarketOS on my oneplus6t with FULL DISK ENCRYPTION. You will need to get into what I call the fastboot screen by holding both volume buttons and presssing the power button on your phone. Once you see the fastboot symbol, let go of the power button, but still hold the volume buttons.</p>
         <p>Tip: I could never get full disk encryption to work on boot slot_b. I was able to get it working on slot_a. I don’t know if this was user error, or something else, so I would suggest using slot_a for this tutorial. Example:</p>
         <pre><code>
         fastboot set_active a</code></pre>
@@ -158,7 +159,7 @@
         fastboot flash vendor oneplus-fajita-boot.img
         fastboot flash userdata oneplus-fajita-root.img</code></pre>
         <p>Once everything is flashed turn off the device. Reboot, and make sure that everything is working as it should. As of this writing postmarketOS does not correctly size the storage on your device. It is very important to boot the device, and then restart, before you resize the storage.</p>
-        <p>Next download the jumpdrive enchilada/fajita boot image from <a href="https://github.com/dreemurrs-embedded/Jumpdrive/releases">github</a> and run:</p>
+        <p>Next download the jumpdrive enchilada/fajita boot image from <a href="https://github.com/dreemurrs-embedded/Jumpdrive/releases">github</a> and run from the oneplyus6/t fastboot screen:</p>
         <pre><code>fastboot boot jumpdrive.img</code></pre>
         <p>The phone will boot into the jumpdrive os and show as a block device when connected to your computer using a usb cable. In my case it was sda.</p>
         <p>Run <code>cryptsetup open /dev/sdx oneplus</code> and enter your password for unlocking the device.</p>
