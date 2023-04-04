@@ -81,7 +81,7 @@ fastboot flash userdata oneplus-fajita-root.img
 Once everything is flashed turn off the device. Reboot, and make sure that everything is working as it should. As of this writing postmarketOS does not correctly size the storage on your device. It is very important to boot the device, and then restart, before you resize the storage. 
 
 
-Next download the jumpdrive enchilada/fajita boot image from [github](https://github.com/dreemurrs-embedded/Jumpdrive/releases) and run from the oneplyus6/t fastboot screen:
+Next download the jumpdrive enchilada/fajita boot image from [github](https://github.com/dreemurrs-embedded/Jumpdrive/releases) and run:
 
 ```
 fastboot boot jumpdrive.img
