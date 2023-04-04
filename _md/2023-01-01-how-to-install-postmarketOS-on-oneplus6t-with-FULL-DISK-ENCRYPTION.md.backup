@@ -9,7 +9,7 @@ Note: This tutorial assumes you have your oneplus6/t device unlocked. I will add
 Warning: I have not tried this with dual booting android.
 
 
-Here is how I installed postmarketOS on my oneplus6t with FULL DISK ENCRYPTION. You will need to get into what I call the fastboot screen by holding both volume buttons and presssing the power button on your phone. Once you see the fastboot symbol, let go of the power button, but still hold the volume buttons. Once you see details of your device, you can let go of all keys. You are now in the "fastboot screen".
+Here is how I installed postmarketOS on my oneplus6t with FULL DISK ENCRYPTION. You will need to get into what I call the fastboot screen by holding both volume buttons and presssing the power button on your phone. Once you see the fastboot symbol, let go of the power button, but still hold the volume buttons. Once you see details of your device, you can let go of all keys. You are now in the "fastboot screen"
 
 Tip: I could never get full disk encryption to work on boot slot_b. I was able to get it working on slot_a. I don't know if this was user error, or something else, so I would suggest using slot_a for this tutorial. Example:
 
