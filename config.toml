@@ -15,7 +15,7 @@ theme = "kosmosghost_blog"
     url = "/posts/"
     weight = 1
   [[menu.main]]
-    name = "Tags"
+    name = "Podcasts"
     pre = "tag"
-    url = "/tags/"
+    url = "/podcasts/"
     weight = 3

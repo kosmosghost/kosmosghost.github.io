@@ -39,3 +39,21 @@ html {
     background-color: darkgray;
     color: black;
   }
+
+  .desc {
+    font-size: 85%;
+    margin-top: 0%;
+  }
+
+  time {
+    margin-top: 0%;
+    font-size: 90%;
+  }
+
+  .post-list {
+    margin-bottom: 0%;
+  }
+
+  .home_page {
+    margin: 5%;
+  }
