@@ -1,7 +1,7 @@
 ---
 title: "Installing PostmarketOS With Full Disk Encryption on Oneplus6 Oneplus6t Devices"
 date: 2023-08-05T19:30:24-07:00
-draft: true
+draft: false
 ---
 
 Installing PostmarketOS on the Oneplus 6/6t devices is pretty easy, and you will have a linux operating system on your phone with full disk encryption. By following this short tutorial you can have a mobile linux operating system on your phone in no time, but this tutorial assumes you are using linux for doing the install. Before you start you are going to need a few tools:

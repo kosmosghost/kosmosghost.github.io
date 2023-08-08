@@ -1,7 +1,7 @@
 ---
 title: "Reinstall Android on Oneplus6 or Oneplus6t Device After Installing Mobile Linux"
 date: 2023-08-07T19:50:08-07:00
-draft: true
+draft: false
 ---
 
 Did you install a Mobile Linux Operating System onto your Oneplus6 or Oneplus6t device, and you want to go back to android? Well, you're in luck as it's a pretty straight forward process.
