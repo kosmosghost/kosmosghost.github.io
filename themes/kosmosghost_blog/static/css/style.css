@@ -57,3 +57,11 @@ html {
   .home_page {
     margin: 5%;
   }
+
+  .table-podcasts {
+    font-size: 70%;
+  }
+
+  .table-podcasts-small {
+    font-size: 50%;
+  }
