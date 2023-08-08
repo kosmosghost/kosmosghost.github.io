@@ -1,0 +1,41 @@
+html {
+    background-color: rgb(24, 26, 28);
+    color: rgb(194, 196, 198);
+    margin-left: 15%;
+    margin-right: 15%;
+    line-height: 1.5;
+    font-family: Georgia, serif;
+    font-size: 20px;
+  }
+
+  a {
+    color: rgb(145, 156, 235);
+  }
+
+  a:visited {
+    color: rgb(145, 156, 235);
+  }
+
+  ol {
+    list-style-type: square;
+    color: white;
+  }
+
+  li {
+    list-style: square;
+  }
+
+  a:not(:hover) {
+    text-decoration: none;
+    font-weight: 300;
+    color: rgb(145, 156, 235);
+  }
+
+  code {
+    font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+    font-size: 85%;
+    margin: 0;
+    white-space: pre-wrap;
+    background-color: darkgray;
+    color: black;
+  }
