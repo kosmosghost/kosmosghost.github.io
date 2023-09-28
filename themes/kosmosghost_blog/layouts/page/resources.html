@@ -1,0 +1,18 @@
+{{ define "main" }}
+
+<div class="main-content">
+    {{ .Content }}
+<div class="resources-container">
+{{ range $.Site.Data.resources }}
+<div class="resources-content">
+    <span>{{ .description }}</span>
+</div>
+<div class="resources-content">
+    <a href="{{ .link }}">{{ .source }}</a>
+    <br><br>
+
+</div>
+{{ end }}
+</div>
+</div>
+{{ end }}

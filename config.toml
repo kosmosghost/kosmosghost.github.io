@@ -19,3 +19,8 @@ theme = "kosmosghost_blog"
     pre = "tag"
     url = "/podcasts/"
     weight = 3
+      [[menu.main]]
+    name = "Resources"
+    pre = "tag"
+    url = "/resources/"
+    weight = 3

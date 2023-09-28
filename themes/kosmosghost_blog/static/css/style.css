@@ -1,11 +1,10 @@
 html {
   background-color: rgb(24, 26, 28);
   color: rgb(194, 196, 198);
-  margin-left: 15%;
-  margin-right: 15%;
   line-height: 1.5;
   font-family: Georgia, serif;
   font-size: 20px;
+  margin: auto 5% auto 5%;
 }
 
 a {
@@ -36,36 +35,51 @@ header {
   flex-direction: row;
   justify-content: space-between;
 }
+
 header h1 {
   margin: auto;
 }
 
 nav ul {
-  list-style: none;   
+  list-style: none;
 }
 
 nav ul li {
   display: inline-block;
   margin: auto;
+  padding: 10px;
+}
+
+.main-content {
+  margin: auto 10% auto 10%;
+}
+
+.blog-header-title {
+  text-align: center;
+}
+
+.resources-container {
+  display: flex;
+  flex-direction: column;
 }
 
 @media only screen and (max-width: 600px) {
-header {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  text-align: center;
-  width: 100%;
-}
+  header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    width: 100%;
+  }
 
-nav ul li {
-  display: block;
-  margin: auto;
-  text-align: center;
-  background-color: rgb(30, 34, 40);
-  padding-bottom: 10px;
-  padding-top: 10px;
-  margin: 5px auto;
-  width: 100%;
-}   
+  nav ul li {
+    display: block;
+    margin: auto;
+    text-align: center;
+    background-color: rgb(30, 34, 40);
+    padding-bottom: 10px;
+    padding-top: 10px;
+    margin: 5px auto;
+    width: 100%;
+  }
 }

@@ -1,11 +1,18 @@
 {{ define "main" }}
-<h1>{{ .Title }}</h1>
+<div class="main-content">
+
+<h1 class="blog-header-title">{{ .Title }}</h1>
 {{ range .Pages.ByPublishDate.Reverse }}
+<div class="main-content">
+
 <p>
     <h3 class="post-list"><a class="title" href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
     {{ partial "metadata.html" . }}
         <p class="desc">{{ .Params.desc }}</p>
     </a>
 </p>
+</div>
 {{ end }}
+</div>
+
 {{ end }}
