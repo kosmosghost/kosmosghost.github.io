@@ -1,118 +1,17 @@
 {{ define "main" }}
-<!-- Main Content -->
-<div class="podcasts">
+
+<div class="main-content">
     {{ .Content }}
+<div class="podcasts-container">
+{{ range $.Site.Data.podcasts }}
+<div class="podcasts-content">  
+  <span><a href="{{ .link }}">{{ .name }}</a></span><span class="rss-image"><a href="{{ .rss }}"> <img src="https://wp-assets.rss.com/blog/wp-content/uploads/2019/10/10111557/social_style_3_rss-512-1.png"/></a></span>
 </div>
-
-{{ $podcast := dict
-    "name" "Podcast"
-    "desc" "Description"
-    "link" "Link"
-    "rss" "rss"
-  }}
-
-  {{ $podcast := slice $podcast }}
-  
-  {{ $podcast = $podcast | append (dict
-    "name" "Ask Noah"
-    "desc" "Ask Noah is a weekly podcast hosted by Noah and Steve where they answer questions from listeners about all things Linux and self-hosting"
-    "link" "https://podcast.asknoahshow.com"
-    "rss" "https://podcast.asknoahshow.com/rss"
-  ) }}
-
-  {{ $podcast = $podcast | append (dict
-    "name" "Linux Unplugged"
-    "desc" "Jupiter Broadcasting has been around for over a decade, and every week Chris, Wes, and Brent sit down and talk about Linux."
-    "link" "https://www.jupiterbroadcasting.com/"
-    "rss" "https://www.jupiterbroadcasting.com/show/linux-unplugged/"
-  ) }}
-
-  {{ $podcast = $podcast | append (dict
-    "name" "Darknet Diaries"
-    "desc" "Jack Rhysider (not his real name) interviews pen testers and hackers to uncover their minds, and how they were able to commit big hacks."
-    "link" "https://darknetdiaries.com/"
-    "rss" "https://darknetdiaries.com/feedfree.xml"
-  ) }}
-
-  {{ $podcast = $podcast | append (dict
-    "name" "Destination Linux"
-    "desc" "Every week Michael, Jill, and Ryan battle it out over which tastes better, muffins or cupcakes. They also sometimes talk about Linux."
-    "link" "https://tuxdigital.com/podcasts/destination-linux/"
-    "rss" "https://destinationlinux.org/feed/mp3/"
-  ) }}
-
-  {{ $podcast = $podcast | append (dict
-    "name" "Open Source Security Podcast"
-    "desc" "A weekly podcast where Josh and Kurt talk about open source and security."
-    "link" "https://opensourcesecurity.io/"
-    "rss" "http://opensourcesecuritypodcast.libsyn.com/rss"
-  ) }}
-
-  {{ $podcast = $podcast | append (dict
-    "name" "postmarketOS Podcast"
-    "desc" "If you're in to running mobile linux on your phone, the postmarketOS podcast talks about the development going on with postmarketOS."
-    "link" "https://cast.postmarketos.org/"
-    "rss" "https://cast.postmarketos.org/feed.rss"
-  ) }}
-
-  {{ $podcast = $podcast | append (dict
-    "name" "The Privacy, Security, & OSINT Show"
-    "desc" "Michael Bazzell hosts the podcast without ads to advertize his books on security and OSINT at IntelTechniques.com. It's a great show to get tips on how to improve your privacy online."
-    "link" "https://soundcloud.com/user-98066669"
-    "rss" "https://feeds.soundcloud.com/users/soundcloud:users:261098918/sounds.rss"
-  ) }}
-
-  {{ $podcast = $podcast | append (dict
-    "name" "The Wan Show"
-    "desc" "It's a bit more goofy than the other shows. They talk about all sorts of stuff related to tech."
-    "link" "https://www.youtube.com/user/LinusTechTips"
-    "rss" "https://anchor.fm/s/3cbbb3b8/podcast/rss"
-  ) }}
-
-  {{ $podcast = $podcast | append (dict
-    "name" "Command Line Heroes"
-    "desc" "I'm not sure if we should be expecting any new episodes, but Command Line Heroes was a great show where Saron Yitbarek would interview past and current developers to talk about software development."
-    "link" "https://feeds.pacific-content.com/commandlineheroes"
-    "rss" "https://feeds.pacific-content.com/commandlineheroes"
-  ) }}
-  
-
-  {{ $podcast = $podcast | append (dict
-    "name" "Coder Radio"
-    "desc" "Chris and Mike talk about whats going on with Mike's software firm, and other things that involve technoledgy."
-    "link" "https://www.jupiterbroadcasting.com/"
-    "rss" "https://coder.show/rss"
-  ) }}
-
-  {{ $podcast = $podcast | append (dict
-    "name" "Security Now"
-    "desc" "Steve and Leo talk about the latest security vulnerabilties and major hacks."
-    "link" "https://twit.tv/shows/security-now"
-    "rss" "https://feeds.twit.tv/sn.xml"
-  ) }}
-
-  
-<table class="table-podcasts">
-    {{ range $podcast }}
-    <tr>
-      <th>
-          {{ .name }}
-      </th>
-  <th class="table-podcasts-description">
-      {{ .desc }}
-  </th>
-  <th class="table-podcasts-small">
-  {{ .link }}
-  </th>
-  <th class="table-podcasts-small">
-      {{ .rss }}
-  </th>
-  </tr>
-  
-
+<div class="podcasts-content">
+  <span>{{ .description }}</span>
+  <br><br>
+</div>
 {{ end }}
-  
-</table>    
-
-
+</div>
+</div>
 {{ end }}

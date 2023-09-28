@@ -22,8 +22,6 @@ Verify that your computer can see the device:
 sudo fastboot devices
 ```
 
-#Insert Picture here.
-
 If you see your device proceed to the next step. Otherwise remove the usb cable, reboot your phone into fastboot again, and then reattach. If that doesn't work try rebooting your computer and start again.
 
 Unlock your device:
@@ -111,8 +109,6 @@ sudo fastboot boot boot-oneplus-fajita.img
 ```
 
 The phone will boot into the jumpdrive os and show as a block device when connected to your computer using a usb cable. Use `lsblk` to find the device. In my case it was sda.
-
-#insert picture here
 
 Run `cryptsetup open /dev/$SDX oneplus`, replacing $SDX with the appropriate device name(sda, sdb, sdc, etc) and enter your password for unlocking the device.
 
