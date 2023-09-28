@@ -95,7 +95,7 @@ Once everything is flashed turn off the device. Reboot, and make sure that every
 Because we installed postmarketOS with btrfs, we can easily resize the device once the device has booted. Open up the console on the phone, or while the phone is connected to usb ssh into the phone `ssh $USER@172.16.42.1` Replace $USER with the user name that you entered when you ran `pmbootstrap init`. Type in the following into the terminal:
 
 ```
-sudo btrfs resize max /
+sudo btrfs filesystem resize max /
 ```
 
 If you opted to go with EXT4 instead of BTRFS then power on your phone and make sure it works. Then reboot into fastboot mode and connect to your computer with the usb cable. Download the jumpdrive enchilada/fajita boot image from [github](https://github.com/dreemurrs-embedded/Jumpdrive/releases) and for the Oneplus6 run on your computer:

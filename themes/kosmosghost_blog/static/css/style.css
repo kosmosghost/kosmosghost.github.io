@@ -1,67 +1,71 @@
 html {
-    background-color: rgb(24, 26, 28);
-    color: rgb(194, 196, 198);
-    margin-left: 15%;
-    margin-right: 15%;
-    line-height: 1.5;
-    font-family: Georgia, serif;
-    font-size: 20px;
-  }
+  background-color: rgb(24, 26, 28);
+  color: rgb(194, 196, 198);
+  margin-left: 15%;
+  margin-right: 15%;
+  line-height: 1.5;
+  font-family: Georgia, serif;
+  font-size: 20px;
+}
 
-  a {
-    color: rgb(145, 156, 235);
-  }
+a {
+  color: rgb(145, 156, 235);
+}
 
-  a:visited {
-    color: rgb(145, 156, 235);
-  }
+a:visited {
+  color: rgb(145, 156, 235);
+}
 
-  ol {
-    list-style-type: square;
-    color: white;
-  }
+a:not(:hover) {
+  text-decoration: none;
+  font-weight: 300;
+  color: rgb(145, 156, 235);
+}
 
-  li {
-    list-style: square;
-  }
+code {
+  font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+  font-size: 85%;
+  margin: 0;
+  white-space: pre-wrap;
+  background-color: darkgray;
+  color: black;
+}
 
-  a:not(:hover) {
-    text-decoration: none;
-    font-weight: 300;
-    color: rgb(145, 156, 235);
-  }
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+header h1 {
+  margin: auto;
+}
 
-  code {
-    font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
-    font-size: 85%;
-    margin: 0;
-    white-space: pre-wrap;
-    background-color: darkgray;
-    color: black;
-  }
+nav ul {
+  list-style: none;   
+}
 
-  .desc {
-    font-size: 85%;
-    margin-top: 0%;
-  }
+nav ul li {
+  display: inline-block;
+  margin: auto;
+}
 
-  time {
-    margin-top: 0%;
-    font-size: 90%;
-  }
+@media only screen and (max-width: 600px) {
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  width: 100%;
+}
 
-  .post-list {
-    margin-bottom: 0%;
-  }
-
-  .home_page {
-    margin: 5%;
-  }
-
-  .table-podcasts {
-    font-size: 70%;
-  }
-
-  .table-podcasts-small {
-    font-size: 50%;
-  }
+nav ul li {
+  display: block;
+  margin: auto;
+  text-align: center;
+  background-color: rgb(30, 34, 40);
+  padding-bottom: 10px;
+  padding-top: 10px;
+  margin: 5px auto;
+  width: 100%;
+}   
+}

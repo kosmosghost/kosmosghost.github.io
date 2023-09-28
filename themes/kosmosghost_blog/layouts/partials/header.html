@@ -1,15 +1,15 @@
-<div id="nav-border" class="container">
-    <h1>KosmosGhost Site</h1>
-    <nav id="nav" class="nav justify-content-center">
-        {{ range .Site.Menus.main }}
-        <a class="nav-link" href="{{ .URL }}">
-        {{ if .Pre }}
-        {{ $icon := printf "<i data-feather=\"%s\"></i> " .Pre | safeHTML }}
-        {{ $icon }}
-        {{ end }}
-        {{ $text := print .Name | safeHTML }}
-        {{ $text }}
-        </a>
-        {{ end }}
-    </nav>
-</div>
+<header>
+    <div><h1>kosmosghost</h1></div>
+    <div>
+        <nav>
+            <ul>
+            {{ range .Site.Menus.main }}
+            <a href="{{ .URL }}">
+                {{ $text := print .Name | safeHTML }}
+                <li>{{ $text }}</li>
+            </a>
+            {{ end }}
+            </ul>
+        </nav>
+    </div>
+</header>
