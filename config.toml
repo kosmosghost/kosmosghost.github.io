@@ -1,6 +1,6 @@
 baseURL = 'https://kosmosghost.github.io/'
 languageCode = 'en-us'
-title = 'KosmosGhost Site'
+title = 'The KosmosGhost Site'
 theme = "kosmosghost_blog"
 
 [menu]
