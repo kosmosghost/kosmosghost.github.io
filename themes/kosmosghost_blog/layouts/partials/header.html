@@ -2,14 +2,14 @@
     <div><h1>kosmosghost</h1></div>
     <div>
         <nav>
-            <ul>
+            <div class="nav-items">
             {{ range .Site.Menus.main }}
             <a href="{{ .URL }}">
                 {{ $text := print .Name | safeHTML }}
-                <li>{{ $text }}</li>
+                {{ $text }}
             </a>
             {{ end }}
-            </ul>
+            </div>
         </nav>
     </div>
 </header>
