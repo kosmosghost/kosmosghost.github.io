@@ -38,6 +38,7 @@ header {
 
 header h1 {
   margin: auto;
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
 }
 
 .main-content {
@@ -46,6 +47,7 @@ header h1 {
 
 .blog-header-title {
   text-align: center;
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
 }
 
 .resources-container {
