@@ -40,19 +40,19 @@ wan_show:
   link: "https://www.youtube.com/user/LinusTechTips"
   rss: "https://anchor.fm/s/3cbbb3b8/podcast/rss"
 
-podcast:
+command_line_heroes:
   name: "Command Line Heroes"
   description: "I'm not sure if we should be expecting any new episodes, but Command Line Heroes was a great show where Saron Yitbarek would interview past and current developers to talk about software development."
   link: "https://feeds.pacific-content.com/commandlineheroes"
   rss: "https://feeds.pacific-content.com/commandlineheroes"
 
-podcast:
+coder_radio:
   name: "Coder Radio"
   description: "Chris and Mike talk about whats going on with Mike's software firm, and other things that involve technoledgy."
   link: "https://www.jupiterbroadcasting.com/"
   rss: "https://coder.show/rss"
 
-podcast:
+security_now:
   name: "Security Now"
   description: "Steve and Leo talk about the latest security vulnerabilties and major hacks."
   link: "https://twit.tv/shows/security-now"
