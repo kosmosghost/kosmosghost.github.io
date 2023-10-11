@@ -30,6 +30,10 @@ code {
   color: black;
 }
 
+em {
+  text-align: center;
+}
+
 header {
   display: flex;
   flex-direction: row;

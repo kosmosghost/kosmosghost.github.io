@@ -123,6 +123,10 @@ What I miss most coming from a mainstream mobile device such as Android or IOS a
 I am cheating here, because I still use the Mastodon web app, but Tokodon has come a long way, and is very close to being useable. Unfortunately, the app does crash often.
 
 ![](/images/mobile_linux_apps/tokodon.png)
+*Tokodon*
+
+![](/images/mobile_linux_apps/mastodon.png)
+*The Mastodon Web App.
 
 ## Matrix:
 We don't have a great Matrix client, *yet*. Neochat, and Fluffychat come close.
