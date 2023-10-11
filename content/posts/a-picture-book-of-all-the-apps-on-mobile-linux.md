@@ -94,7 +94,7 @@ Unfortunately, Nextcloud doesn't work great out of the box on mobile linux. I wi
 
 For the password manager, I am using gnome-passwordsafe, otherwise known as Secrets.
 
-![](/images/mobile_linux_apps/password.png)
+![](/images/mobile_linux_apps/passwords.png)
 
 ## Games:
 
