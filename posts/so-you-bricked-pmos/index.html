@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+
+
+<title>The KosmosGhost Site | So, You Bricked PmOS</title>
+<a rel="me" href="https://fosstodon.org/@kosmosghost"></a>
+</head><body><header>
+    <div>
+        <h1>kosmosghost</h1>
+    </div>
+    <div>
+        <nav>
+            <div class="nav-bar">
+                
+                
+                <div class="nav-items"><a href="/">
+                        Home
+                    </a>
+                    <div class="nav-items-content">
+                    </div>
+                </div>
+                
+                
+                <div class="nav-items"><a href="/posts/">
+                        Posts
+                    </a>
+                    <div class="nav-items-content">
+                    </div>
+                </div>
+                
+                
+                <div class="nav-items"><a href="/podcasts/">
+                        Podcasts
+                    </a>
+                    <div class="nav-items-content">
+                    </div>
+                </div>
+                
+                
+                <div class="nav-items"><a href="/resources/">
+                        Resources
+                    </a>
+                    <div class="nav-items-content">
+                    </div>
+                </div>
+                
+            </div>
+        </nav>
+    </div>
+</header><div id="content">
+<div>
+</div>
+<div class="main-content blog-content">
+    <h1>So, You Bricked PmOS</h1>
+    
+
+<time datetime="2024-01-26">Jan 26, 2024</time>
+
+    <p>Oh no! You broke the GUI while doing an upgrade with pmOS. It might be possible to fix it with chroot, and this short tutorial will show you how.</p>
+<p>The following was tested using an x86 laptop, and a oneplus6t-fajita running postmarketOS.</p>
+<h2 id="first-things-first">First things, first.</h2>
+<p>This is a real good opportunity to back up your data. Try to keep that in mind while you are doing this tutorial.</p>
+<h2 id="download-jumpdrive">Download jumpdrive</h2>
+<p>Download jumpdrive from <a href="https://github.com/dreemurrs-embedded/Jumpdrive/releases">here</a>.</p>
+<h2 id="boot-into-fastboot">Boot into fastboot.</h2>
+<p>Boot the phone into fastboot. On the Oneplus 6 hold the volume up and the power button at the same time. On the Oneplus6t hold both volume buttons and the power button at the same time. Once the phone has rebooted into fastboot, release the power button first, and then release the volume keys.</p>
+<h2 id="boot-jumpdrive">Boot jumpdrive.</h2>
+<p>In the directory that you downloaded jumpdrive type in <code>sudo fastboot boot boot-oneplus-enchilada.img </code> for oneplus6 enchilada, or <code>sudo fastboot boot  boot-oneplus-fajita.img</code> for oneplus6t fajita.</p>
+<h2 id="download-qemu-aarch64-static-from-your-package-manager">Download qemu-aarch64-static from your package manager.</h2>
+<p>sudo apt install qemu-aarch64-static</p>
+<p>sudo dnf install qemu-aarch-static</p>
+<p>ETC</p>
+<h2 id="the-rest-is-easy">The rest is easy&hellip;</h2>
+<p>Connect the phone and computer together with USB. The root partition will be the only partition available through USB. Unlock and mount it to your computer.</p>
+<p><strong>This is the perfect time to copy all the files that are important to you from your phone to your computer</strong></p>
+<p>Run the following commands, replacing <!-- raw HTML omitted --> with the full path to the pmOS mount. In my case <code>sudo chroot /mnt/pmOS_root qemu-aarch64-static &lt;COMMAND&gt;</code></p>
+<p><code>sudo chroot &lt;PATH&gt; qemu-aarch64-static apk update</code></p>
+<p><code>sudo chroot &lt;PATH&gt; qemu-aarch64-static apk upgrade</code></p>
+<p><code>sudo chroot &lt;PATH&gt; qemu-aarch64-static apk fix</code></p>
+<h2 id="and-thats-it">And that&rsquo;s it!</h2>
+<p>After doing some testing I found that when APK was doing the upgrade, installing a new kernel would fail, which is a good thing since /boot isn&rsquo;t mounted. I tried to figure out how to mount boot using jumpdrive, but I couldn&rsquo;t find a way to do so.</p>
+
+</div>
+
+        </div></body>
+</html>

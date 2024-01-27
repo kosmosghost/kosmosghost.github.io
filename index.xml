@@ -6,7 +6,19 @@
     <description>Recent content on The KosmosGhost Site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 10 Oct 2023 00:53:49 -0700</lastBuildDate><atom:link href="https://kosmosghost.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 26 Jan 2024 23:15:27 -0800</lastBuildDate><atom:link href="https://kosmosghost.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>So, You Bricked PmOS</title>
+      <link>https://kosmosghost.github.io/posts/so-you-bricked-pmos/</link>
+      <pubDate>Fri, 26 Jan 2024 23:15:27 -0800</pubDate>
+      
+      <guid>https://kosmosghost.github.io/posts/so-you-bricked-pmos/</guid>
+      <description>Oh no! You broke the GUI while doing an upgrade with pmOS. It might be possible to fix it with chroot, and this short tutorial will show you how.
+The following was tested using an x86 laptop, and a oneplus6t-fajita running postmarketOS.
+First things, first. This is a real good opportunity to back up your data. Try to keep that in mind while you are doing this tutorial.
+Download jumpdrive Download jumpdrive from here.</description>
+    </item>
+    
     <item>
       <title>A Picture Book of some of the Apps on Mobile Linux</title>
       <link>https://kosmosghost.github.io/posts/a-picture-book-of-some-of-the-apps-on-mobile-linux/</link>
