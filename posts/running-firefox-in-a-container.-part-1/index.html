@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+
+
+<title>The KosmosGhost Site | Running Firefox in its own container</title>
+<a rel="me" href="https://fosstodon.org/@kosmosghost"></a>
+</head><body><header>
+    <div>
+        <h1>kosmosghost</h1>
+    </div>
+    <div>
+        <nav>
+            <div class="nav-bar">
+                
+                
+                <div class="nav-items"><a href="/">
+                        Home
+                    </a>
+                    <div class="nav-items-content">
+                    </div>
+                </div>
+                
+                
+                <div class="nav-items"><a href="/posts/">
+                        Posts
+                    </a>
+                    <div class="nav-items-content">
+                    </div>
+                </div>
+                
+                
+                <div class="nav-items"><a href="/podcasts/">
+                        Podcasts
+                    </a>
+                    <div class="nav-items-content">
+                    </div>
+                </div>
+                
+                
+                <div class="nav-items"><a href="/resources/">
+                        Resources
+                    </a>
+                    <div class="nav-items-content">
+                    </div>
+                </div>
+                
+            </div>
+        </nav>
+    </div>
+</header><div id="content">
+<div>
+</div>
+<div class="main-content blog-content">
+    <h1>Running Firefox in its own container</h1>
+    
+
+<time datetime="2024-02-09">Feb 9, 2024</time>
+
+    <p><em>A word of warning:</em> Please do not assume that following this tutorial will add anything to your internet security. I created this guide because I couldn&rsquo;t really find anything about running Firefox in its own container.</p>
+<p><em>A quick suggestion:</em> When I was trying to really find out about containers and namespaces, I made a mistake of web searching with a search string that would include the word, &ldquo;container.&rdquo; This turned out to be a painful experience since most web searches would return information on Docker. Unfortunately, I did not realize this until I had already written this blog post. In future web searches I will be replacing the word &ldquo;container&rdquo; with the word &ldquo;namespace.&rdquo;</p>
+<p>Why do this at all? Lots of reasons. You can try out a new extension without risking your main Firefox app. If you&rsquo;re a web developer you can test out your app in it&rsquo;s own Firefox container. The possibilities are limitless. Have fun.</p>
+<h2 id="firefox-in-a-basket">Firefox in a basket</h2>
+<p>Let&rsquo;s start with the basics.</p>
+<p>Download the Alpine MINI ROOT FILESYSTEM from <a href="https://www.alpinelinux.org/downloads/">alpinelinux.org</a>.</p>
+<p>Copy the tarball to your directory of choice to a container directory and then extract it. For this guide I will be using the directory /opt/containers/alpine. You can use whatever directory you like.</p>
+<p>Copy your resolv.conf into the container directory.</p>
+<p><code>cp /etc/resolv.conf /opt/containers/alpine/etc/</code></p>
+<p>For best security practices we are going to mount only a few files from /dev into the containers directory.</p>
+<pre tabindex="0"><code>mkdir /opt/containers/alpine/dev/snd
+touch /opt/containers/alpine/dev/urandom
+touch /opt/containers/alpine/dev/null
+sudo mount -o bind /dev/snd /opt/containers/alpine/dev/snd
+sudo mount -o bind /dev/null /opt/containers/alpine/dev/null
+sudo mount -o bind /dev/urandom /opt/containers/alpine/dev/urandom
+</code></pre><p>Next we are going to use the unshare command to start ash shell.</p>
+<p><code>unshare -muipCUfr --kill-child --mount-proc --root=/opt/containers/alpine env - /bin/ash -l</code></p>
+<p>Unshare is similar to chroot, except that we are able to isolate child processes from the rest of the host system. For example, when we use top to view our processes in the new container we can see that we are only running ash and top, and ash has a PID of 1.</p>
+<p><img src="/images/namespace/top-isolated.png" alt=""></p>
+<p>Alright. So now we are in our own isolated container. It&rsquo;s time to install firefox.</p>
+<pre tabindex="0"><code>apk update
+apk add firefox font-noto 
+</code></pre><p>We are just about done, but to make things a bit easier for us let&rsquo;s create a short script that will automate a few things for us. In the container directory, in my case /opt/containers/alpine create a file named start.sh. Inside start.sh add the following.</p>
+<pre tabindex="0"><code>#!/bin/sh
+hostname localhost
+export HOSTNAME=localhost
+export USER=firefox
+export DISPLAY=:0
+firefox
+</code></pre><p>Now we are ready to run an isolated Firefox.</p>
+<p><code>unshare -muipCUfr --kill-child --mount-proc --root=/opt/containers/alpine env - sh start.sh</code></p>
+<p>In the process we used to make the container, we did not mount the device files needed for hardware acceleration. We also didn&rsquo;t install the files from the package manager to enable hardware acceleration. This was deliberate, as I wanted to mount the smallest amount of files in the /dev directory. The total size of our container is 399M.</p>
+
+</div>
+
+        </div></body>
+</html>

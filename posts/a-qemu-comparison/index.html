@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+
+
+<title>The KosmosGhost Site | A Qemu Comparison</title>
+<a rel="me" href="https://fosstodon.org/@kosmosghost"></a>
+</head><body><header>
+    <div>
+        <h1>kosmosghost</h1>
+    </div>
+    <div>
+        <nav>
+            <div class="nav-bar">
+                
+                
+                <div class="nav-items"><a href="/">
+                        Home
+                    </a>
+                    <div class="nav-items-content">
+                    </div>
+                </div>
+                
+                
+                <div class="nav-items"><a href="/posts/">
+                        Posts
+                    </a>
+                    <div class="nav-items-content">
+                    </div>
+                </div>
+                
+                
+                <div class="nav-items"><a href="/podcasts/">
+                        Podcasts
+                    </a>
+                    <div class="nav-items-content">
+                    </div>
+                </div>
+                
+                
+                <div class="nav-items"><a href="/resources/">
+                        Resources
+                    </a>
+                    <div class="nav-items-content">
+                    </div>
+                </div>
+                
+            </div>
+        </nav>
+    </div>
+</header><div id="content">
+<div>
+</div>
+<div class="main-content blog-content">
+    <h1>A Qemu Comparison</h1>
+    
+
+<time datetime="2024-01-30">Jan 30, 2024</time>
+
+    <p>I wanted to create a build system on my X86-64 laptop that would cross-compile apps, and then package them in the alpine *.apk format. Did I accomplish this task? Yes. Will I be using my build system? Nope.</p>
+<p>Why?</p>
+<pre tabindex="0"><code>qemu-aarch64: 
+real    1h 8m 39s
+user    4h 21m 47s
+sys     2m 16.29s
+</code></pre><pre tabindex="0"><code>x84_64:
+real    2m 13.35s
+user    11m 10.88s
+sys     0m 23.99s
+</code></pre><p>That&rsquo;s right. In took over an hour to cross-compile and package the software. I&rsquo;m still grateful that qemu exists, and to be honest the slow compilation could be the result from user error.</p>
+
+</div>
+
+        </div></body>
+</html>

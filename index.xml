@@ -6,7 +6,28 @@
     <description>Recent content on The KosmosGhost Site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 26 Jan 2024 23:15:27 -0800</lastBuildDate><atom:link href="https://kosmosghost.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 09 Feb 2024 01:34:19 -0800</lastBuildDate><atom:link href="https://kosmosghost.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Running Firefox in its own container</title>
+      <link>https://kosmosghost.github.io/posts/running-firefox-in-a-container.-part-1/</link>
+      <pubDate>Fri, 09 Feb 2024 01:34:19 -0800</pubDate>
+      
+      <guid>https://kosmosghost.github.io/posts/running-firefox-in-a-container.-part-1/</guid>
+      <description>A word of warning: Please do not assume that following this tutorial will add anything to your internet security. I created this guide because I couldn&amp;rsquo;t really find anything about running Firefox in its own container.
+A quick suggestion: When I was trying to really find out about containers and namespaces, I made a mistake of web searching with a search string that would include the word, &amp;ldquo;container.&amp;rdquo; This turned out to be a painful experience since most web searches would return information on Docker.</description>
+    </item>
+    
+    <item>
+      <title>A Qemu Comparison</title>
+      <link>https://kosmosghost.github.io/posts/a-qemu-comparison/</link>
+      <pubDate>Tue, 30 Jan 2024 23:42:40 -0800</pubDate>
+      
+      <guid>https://kosmosghost.github.io/posts/a-qemu-comparison/</guid>
+      <description>I wanted to create a build system on my X86-64 laptop that would cross-compile apps, and then package them in the alpine *.apk format. Did I accomplish this task? Yes. Will I be using my build system? Nope.
+Why?
+qemu-aarch64: real 1h 8m 39s user 4h 21m 47s sys 2m 16.29s x84_64: real 2m 13.35s user 11m 10.88s sys 0m 23.99s That&amp;rsquo;s right. In took over an hour to cross-compile and package the software.</description>
+    </item>
+    
     <item>
       <title>So, You Bricked PmOS</title>
       <link>https://kosmosghost.github.io/posts/so-you-bricked-pmos/</link>
@@ -65,7 +86,7 @@ Android tools for fastboot - On Fedora: sudo dnf install android-tools</descript
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://kosmosghost.github.io/podcasts/</guid>
-      <description>A list of Linux and Tech related podcasts: </description>
+      <description>A list of Linux and Tech related podcasts that I listen to: </description>
     </item>
     
     <item>

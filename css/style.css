@@ -61,8 +61,8 @@ header h1 {
 }
 
 .blog-content img {
-  height: 50vw;
-  width: auto;
+  max-height: 50vw;
+  max-width: 100%;
   display: block;
   margin: auto;
 }
