@@ -8,13 +8,13 @@
     <language>en-us</language>
     <lastBuildDate>Fri, 09 Feb 2024 01:34:19 -0800</lastBuildDate><atom:link href="https://kosmosghost.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Running Firefox in its own container</title>
-      <link>https://kosmosghost.github.io/posts/running-firefox-in-a-container.-part-1/</link>
+      <title>Fun with Containers - Episode One - Firefox</title>
+      <link>https://kosmosghost.github.io/posts/fun-with-namespaces-p1/</link>
       <pubDate>Fri, 09 Feb 2024 01:34:19 -0800</pubDate>
       
-      <guid>https://kosmosghost.github.io/posts/running-firefox-in-a-container.-part-1/</guid>
-      <description>A word of warning: Please do not assume that following this tutorial will add anything to your internet security. I created this guide because I couldn&amp;rsquo;t really find anything about running Firefox in its own container.
-A quick suggestion: When I was trying to really find out about containers and namespaces, I made a mistake of web searching with a search string that would include the word, &amp;ldquo;container.&amp;rdquo; This turned out to be a painful experience since most web searches would return information on Docker.</description>
+      <guid>https://kosmosghost.github.io/posts/fun-with-namespaces-p1/</guid>
+      <description>Word of warning: Please do not assume that following this tutorial will add anything to your internet security. I created this guide because I couldn&amp;rsquo;t find anything about running Firefox in its own container.
+A quick suggestion: When I was trying to find out about containers and namespaces, I made the mistake of web searching with a search string that would include the word, &amp;ldquo;container.&amp;rdquo; This turned out to be a painful experience since most web searches would return information on Docker.</description>
     </item>
     
     <item>
@@ -72,20 +72,11 @@ Android tools for fastboot - On Fedora: sudo dnf install android-tools</descript
     </item>
     
     <item>
-      <title></title>
+      <title>interests</title>
       <link>https://kosmosghost.github.io/interests/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://kosmosghost.github.io/interests/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>podcasts</title>
-      <link>https://kosmosghost.github.io/podcasts/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://kosmosghost.github.io/podcasts/</guid>
       <description>A list of Linux and Tech related podcasts that I listen to: </description>
     </item>
     

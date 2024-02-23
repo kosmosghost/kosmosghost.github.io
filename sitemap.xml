@@ -2,10 +2,10 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://kosmosghost.github.io/posts/</loc>
+    <loc>https://kosmosghost.github.io/posts/fun-with-namespaces-p1/</loc>
     <lastmod>2024-02-09T01:34:19-08:00</lastmod>
   </url><url>
-    <loc>https://kosmosghost.github.io/posts/running-firefox-in-a-container.-part-1/</loc>
+    <loc>https://kosmosghost.github.io/posts/</loc>
     <lastmod>2024-02-09T01:34:19-08:00</lastmod>
   </url><url>
     <loc>https://kosmosghost.github.io/</loc>
@@ -26,12 +26,9 @@
     <loc>https://kosmosghost.github.io/posts/installing-postmarketos-with-full-disk-encryption-on-oneplus6-oneplus6t-devices/</loc>
     <lastmod>2023-08-05T19:30:24-07:00</lastmod>
   </url><url>
-    <loc>https://kosmosghost.github.io/interests/</loc>
-    <priority>0</priority>
-  </url><url>
     <loc>https://kosmosghost.github.io/categories/</loc>
   </url><url>
-    <loc>https://kosmosghost.github.io/podcasts/</loc>
+    <loc>https://kosmosghost.github.io/interests/</loc>
   </url><url>
     <loc>https://kosmosghost.github.io/resources/</loc>
   </url><url>
